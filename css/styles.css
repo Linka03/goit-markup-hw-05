@@ -1,7 +1,8 @@
 :root {
   --primary-text-color: #2e2f42;
   --title-text-color: #2e2f42;
-  --accent-color: #4d5ae5;
+  --accent-color: #4d5ae5; 
+  --second-accent-color: #404BBF;
 }
 
 html {
@@ -107,7 +108,7 @@ body {
   position: absolute;
   width: 100%;
   height: 4px;
-  background: #404BBF;
+  background:var(--second-accent-color);
 border-radius: 2px;
 left: 0;
 bottom: -28px;
@@ -115,7 +116,11 @@ bottom: -28px;
 
 .item-link:hover,
 .item-link:focus {
-  color: #404bbf;
+  color: var(--second-accent-color);
+}
+
+.item-link.current{
+  color:var(--second-accent-color);
 }
 
 .header-mail {
@@ -133,7 +138,7 @@ bottom: -28px;
 
 .header-mail:hover,
 .header-mail:focus {
-  color: #404bbf;
+  color: var(--second-accent-color);
 }
 
 .header-tel {
@@ -151,7 +156,7 @@ bottom: -28px;
 
 .header-tel:hover,
 .header-tel:focus {
-  color: #404bbf;
+  color: var(--second-accent-color);
 }
 
 /*-------MAIN---------*/
@@ -210,7 +215,7 @@ bottom: -28px;
 
 .main-btn:hover,
 .main-btn:focus {
-  background: #404bbf;
+  background: var(--second-accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -362,7 +367,7 @@ bottom: -28px;
 }
 .team-soc-link:hover,
 .team-soc-link:focus {
-  background-color: #404bbf;
+  background-color: var(--second-accent-color);
 }
 
 .team-soc-icon {
@@ -404,7 +409,7 @@ bottom: -28px;
   align-items: center;
   justify-content: center;
 
-  transition-property: background-color;
+  transition-property: border-color;
   transition-duration: 250ms;
   transition-timing-function: 
   cubic-bezier(0.4, 0, 0.2, 1);
@@ -412,16 +417,20 @@ bottom: -28px;
 
 .customer-link:hover,
 .customer-link:focus {
-  border-color: #404bbf;
+  border-color: var(--second-accent-color);
 }
 
 .customer-link:hover .test-icon,
 .customer-link:focus .test-icon {
-   fill: #404bbf;
+   fill: var(--second-accent-color);
   }
 
 .test-icon {
   fill: #afb1b8;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: 
+  cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*------FOOTER--------*/
@@ -553,7 +562,7 @@ bottom: -28px;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
 
-  transition-property: background-color;
+  transition-property: background-color, color, border, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: 
   cubic-bezier(0.4, 0, 0.2, 1);
@@ -561,15 +570,9 @@ bottom: -28px;
 
 .portfolio-btn:hover,
 .portfolio-btn:focus {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.5;
-  text-align: center;
-  letter-spacing: 0.04em;
   color: #ffffff;
-  background-color: #4d5ae5;
-  border: 1px solid #4d5ae5;
-  border-radius: 4px;
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
 
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
    0px 2px 1px rgba(0, 0, 0, 0.08), 
@@ -614,7 +617,7 @@ line-height: 1.5;
 letter-spacing: 0.02em;
 color: #F4F4FD;
 padding: 40px 32px;
-background: #4D5AE5;
+background: var(--accent-color);
 background-blend-mode: soft-light;
 mix-blend-mode: normal;
 height: 100%;
@@ -705,6 +708,10 @@ height: 24px;
 background: #E7E9FC;
 border: 1px solid rgba(0, 0, 0, 0.1);
 border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
 }
 
 
